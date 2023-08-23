@@ -7,7 +7,7 @@ import { format } from "timeago.js";
 import axios from "axios";
 import { Config } from "../../Config";
 
-function VideoCard({ type, vdo, test }) {
+function RecommendCard({vdo, test }) {
   const [Channel, setChannel] = useState({});
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function VideoCard({ type, vdo, test }) {
   return (
     <Link to={`/video/${vdo._id}`} style={{ textDecoration: "none" }}>
       <div
-        className={`Card-Container w-full  cursor-pointer md:w-72 gap-3 ${type == "sm" ? "flex mb-5 items-center" : "mb-10"}`}
+        className={`Card-Container w-full  cursor-pointer md:w-full gap-3 flex mb-5 items-center `}
         // style={{
         //   display: `${type == "sm" && "flex"}`,
         //   marginBottom: `${type == "sm" && "20px"} `,
@@ -40,23 +40,23 @@ function VideoCard({ type, vdo, test }) {
       >
         <img
           src={vdo.imgUrl}
-          className={`Card-Img  h-40 bg-gray-400 rounded-md ${type == "sm" ? "h-24 w-44":"h-40 w-full"}`}
+          className={`Card-Img  bg-gray-400 rounded-md h-24 w-44 }`}
           // style={{
           //   height: `${type == "sm" && "95px"}`,
           //   width: `${type == "sm" && "180px"}`,
           // }}
         />
         <div
-          className={`Card-Details flex items-center gap-5 ${type == "sm" ? "mt-0" : "mt-4"} `}
+          className={`Card-Details flex items-center gap-5 mt-0  `}
           // style={{ marginTop: `${type == "sm" && "0px"}` }}
         >
           <img
             src={Channel.img}
-            className={`Channel-Img w-8 h-8 rounded-2xl bg-white ${type == "sm" ? "hidden" :""}`}
+            className={`Channel-Img w-8 h-8 rounded-2xl bg-white md:hidden`}
             // style={{ display: `${type == "sm" && "none"}` }}
           />
           <div
-            className={`Card-Texts w-full font-sans ${type == "sm" ? "text-xs" : ""}`}
+            className={`Card-Texts w-full font-sans text-xs flex flex-col gap-2 `}
             // style={{ fontSize: `${type == "sm" && "12px"}` }}
           >
             <h1 className="Card-Title text-lg font-semibold text-gray-400 ">{vdo.title}</h1>
@@ -71,4 +71,4 @@ function VideoCard({ type, vdo, test }) {
   );
 }
 
-export default VideoCard;
+export default RecommendCard;

@@ -1,19 +1,19 @@
-.Video-Container{
+/* .Video-Container{
 display: flex;
 
 gap: 24px;
     
-/* background-color: red; */
 
 
-}
-.Video-Content{
+
+} */
+/* .Video-Content{
     flex: 7;
     color: #aaaaaa;
     margin-left: 20px;
     
    
-}
+} */
 /* .Video-Recommodation{
 flex: 4;
 color: #aaaaaa;
@@ -22,47 +22,47 @@ align-items: center;
 
 } */
 
-.Video-Wrapper{
+/* .Video-Wrapper{
 width: 100% ;
-}
-.Video-Title{
+} */
+/* .Video-Title{
 font-size: 18px;
 font-weight: 400;
 margin-top: 20px;
 margin-bottom: 10px;
 color: #aaaaaa;
-}
-.Video-Details{
+} */
+/* .Video-Details{
 display: flex;
 align-items: center;
 justify-content: space-between;
-}
+} */
 
-.Video-Info{
+/* .Video-Info{
     color: #aaaaaa;
-}
+} */
 
-.Video-Buttons{
+/* .Video-Buttons{
 display: flex;
 gap: 20px;
-}
-.Video-Button{
- /* margin: 0px; */
+} */
+/* .Video-Button{
+ 
  display: flex;
  align-items: center;
  gap: 5px;
  cursor: pointer;
-}
-.Video-Hr{
+} */
+/* .Video-Hr{
     border: 0.5px solid #373737;
     margin: 15px 0px;
-}
-.Video-Channel{
+} */
+/* .Video-Channel{
     display: flex;
     justify-content: space-between;
-}
+} */
 
-.Video-ChannelSubscribe{
+/* .Video-ChannelSubscribe{
 background-color : red;
 font-weight: 500;
 color: white;
@@ -72,39 +72,46 @@ height: max-content;
 padding: 10px 20px;
 cursor: pointer;
 
-}
+} */
 
-.Video-ChannelInfo{
+/* .Video-ChannelInfo{
     display: flex;
     gap: 20px;
-    }
-.Video-ChannelDetail{
+    } */
+/* .Video-ChannelDetail{
  display: flex;
  flex-direction: column;
  color: #aaaaaa;
-}
-.Video-ChannelName{
+} */
+
+/* .Video-ChannelName{
 font-weight: 500;
-}
-.Video-ChannelImg{
+} */
+
+/* .Video-ChannelImg{
 width: 40px;
 height: 40px;
 border-radius: 50%;
 
-}
-.Video-ChannelCounter{
+} */
+
+/* .Video-ChannelCounter{
     margin-top: 5px;
     margin-bottom: 20px;
     color: #aaaaaa;
     font-size: 12px;   
-}
-.Video-ChannelDescription{
+} */
+
+
+/* .Video-ChannelDescription{
  font-size: 14px;
  color: #aaaaaa;
-}
-.Video-Vdo{
+} */
+
+
+/* .Video-Vdo{
     width:100%;
     height:370px;
     background-color: white;
     object-fit: cover;
-}
+} */

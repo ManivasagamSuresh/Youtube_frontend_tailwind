@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
-import "./Uploadvdo.css";
+// import "./Uploadvdo.css";
 import {
   getStorage,
   ref,
@@ -12,7 +12,7 @@ import axios from "axios";
 import { Config } from "../../Config";
 import { useNavigate } from "react-router-dom";
 
-function Uploadvdo({ setOpen }) {
+function Uploadvdo({ setOpen,mob }) {
   const navigate = useNavigate();
   const [Img, setImg] = useState(undefined);
   const [imgPerc, setImgPerc] = useState(0);
@@ -46,7 +46,7 @@ function Uploadvdo({ setOpen }) {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         urltype === "imgUrl"
@@ -106,13 +106,14 @@ function Uploadvdo({ setOpen }) {
   };
 
   return (
-    <div className="Upload-Container">
-      <form>
-        <div className="Upload-Wrapper">
-          <h2 className="Upload-Close" onClick={() => setOpen(false)}>
+    <div className={`Upload-Container  w-full  h-fit  px-1  bg-gray-600 bg-opacity-50 md:flex md:flex-col items-center justify-center`}>
+      <form className="w-full  flex flex-col items-center justify-center">
+        <div className="Upload-Wrapper  w-full md:w-9/12 h-fit bg-gray-800 text-gray-400 p-3 flex flex-col gap-20 relative">
+          <h2 className="Upload-Close absolute top-2 right-3 cursor-pointer text-2xl " onClick={() => navigate("/random")} >
             X
           </h2>
-          <h1 className="Upload-Title">Upload a new Video</h1>
+          <h1 className="text-center text-2xl md:text-4xl mx-6">Upload a new Video</h1>
+          
           <label className="Upload-Lable">Video :</label>
           {vdoPerc > 0 ? (
             "Uploading :" + vdoPerc + "%"
@@ -120,7 +121,7 @@ function Uploadvdo({ setOpen }) {
             <input
               type={"file"}
               accept="video/*"
-              className="Upload-Input"
+              className="Upload-Input border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent"
               onChange={(e) => setVdo(e.target.files[0])}
             />
           )}
@@ -128,7 +129,7 @@ function Uploadvdo({ setOpen }) {
           <input
             type={"text"}
             placeholder="Title"
-            className="Upload-Input"
+            className="Upload-Input border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent"
             onChange={handleChange}
             name="title"
           />
@@ -136,7 +137,7 @@ function Uploadvdo({ setOpen }) {
             rows="8"
             cols=""
             placeholder="Description"
-            className="Upload-Input"
+            className="Upload-Input border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent"
             onChange={handleChange}
             name="desc"
           ></textarea>
@@ -144,26 +145,26 @@ function Uploadvdo({ setOpen }) {
           <input
             type={"text"}
             placeholder="Separate the tags with commas."
-            className="Upload-Input"
+            className="Upload-Input border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent"
             onChange={handleTags}
             name="tags"
           />
 
-          <label className="Upload-Lable">Image :</label>
+          <label className="Upload-Lable border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent">Image :</label>
           {imgPerc ? (
             "Uploading :" + imgPerc + "%"
           ) : (
             <input
               type={"file"}
               accept="image/*"
-              className="Upload-Input"
+              className="Upload-Input border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent"
               onChange={(e) => setImg(e.target.files[0])}
             />
           )}
 
           <button
             type="submit"
-            className="Upload-Button"
+            className="Upload-Button bg-red-500 font-medium text-white border-none rounded-md py-2 px-3 mb-2 cursor-pointer"
             onClick={handleUploadDb}
           >
             Add Video

@@ -5,7 +5,7 @@ import Menu from '../Menu/Menu'
 import Navbar from '../NavBar/Navbar'
 import Video from '../Video/Video'
 import VideoCard from '../VideoCard/Videocard'
-import "./Home.css"
+// import "./Home.css"
 
 function Home({type}) {
 const[Videos , setVideos] = useState([])
@@ -33,7 +33,7 @@ const fetchdata = async()=>{
     <>
     
     
-    <div className='Home-Container'>
+    <div className='Home-Container  bg-zinc-900 mt-14 flex flex-col w-full md:flex-row md:gap-6 flex-wrap md:justify-evenly'>
       {
         Videos.map((vdo)=>{
           return <VideoCard key={vdo._id} vdo={vdo} test="test"/>

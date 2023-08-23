@@ -4,6 +4,7 @@ import "./Recommodation.css"
 import { Config } from '../../Config';
 import VideoCard from '../VideoCard/Videocard';
 import { useSelector } from 'react-redux';
+import RecommendCard from '../recomendCard/RecommendCard';
 
 
 function Recommodation({tags}) {
@@ -30,7 +31,7 @@ function Recommodation({tags}) {
     <div className='Recommodation-Container'>
           {
             Videos.map((vdo)=>{
-                 return   <VideoCard type={"sm"} key={vdo._id} vdo={vdo}/>
+                 return   <RecommendCard  key={vdo._id} vdo={vdo}/>
             })
           }
           </div>

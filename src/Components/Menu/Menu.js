@@ -1,19 +1,9 @@
 import React, { useContext } from 'react'
-import "./Menu.css"
-
-
-import logo from '../../img/log.png'
 import { AiFillHome } from 'react-icons/ai';
 import { MdOutlineExplore } from 'react-icons/md';
 import { MdOutlineSubscriptions } from 'react-icons/md';
-import { MdOutlineVideoLibrary } from 'react-icons/md';
-import { MdOutlineHistory } from 'react-icons/md';
-import { MdOutlineSettings } from 'react-icons/md';
-import { MdHelpOutline } from 'react-icons/md';
-import { MdOutlineLightMode } from 'react-icons/md';
 import { RiAccountCircleLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/userContext';
 import { useSelector } from 'react-redux';
 
 
@@ -22,30 +12,26 @@ function Menu() {
    
    const {currentUser} = useSelector(state => state.user)
   return (
-   <div className='Menu-Container'>
-   
-      <div className='Menu-Wrapper'>
-      {currentUser?<><Link to={'/random'}  style={{textDecoration:"none",color:"inherit"}} >  
-      <div className="Menu-Logo">
-            <img className='Menu-Img' src={logo}/>
-            MBTube            
-        </div>
-      </Link>
+   <>
+   <div className='Menu-Container hidden  bg-red-600 text-black md:flex flex-col flex-1 h-screen sticky top-14 z-0' >
+     
+      <div className='Menu-Wrapper py-5 px-8'>
+      {currentUser?<>
       
-        <div className="Menu-Item" onClick={()=>{navigate("/random")}}>
+        <div className="Menu-Item flex gap-5 items-center cursor-pointer py-2 px-1" onClick={()=>{navigate("/random")}}>
            <AiFillHome size={"1.5em"}/> Home
         </div>
-        <div className="Menu-Item" onClick={()=>{navigate("/trendvideo")}}>
+        <div className="Menu-Item flex gap-5 items-center cursor-pointer py-2 px-1" onClick={()=>{navigate("/trendvideo")}}>
            <MdOutlineExplore size={"1.5em"}/> Explore
         </div>
-        <div className="Menu-Item" onClick={()=>{navigate("/subscribedVideo")}}>
+        <div className="Menu-Item flex gap-5 items-center cursor-pointer py-2 px-1" onClick={()=>{navigate("/subscribedVideo")}}>
            <MdOutlineSubscriptions size={"1.5em"}/> Subscription
         </div>
         
         
             { !currentUser && 
             <>
-            <hr className='Menu-Hr'/>
+            <hr className='Menu-Hr mx-4 border border-solid border-opacity-50 border-gray-700'/>
             <div className="Login">
             Sign In to Like , comment and Subscribe .
             <br/>
@@ -54,28 +40,14 @@ function Menu() {
             </>  }
             
         
-        <hr className='Menu-Hr'/></>:null}
-        {/* <div className="Menu-Item">
-           <MdOutlineVideoLibrary size={"1.5em"}/> Library
-        </div>
-        <div className="Menu-Item">
-           <MdOutlineHistory size={"1.5em"}/> History
-        </div>
-        <hr className='Menu-Hr'/>
-        <div className="Menu-Item">
-           <MdOutlineSettings size={"1.5em"}/> Setting
-        </div>
-        <div className="Menu-Item">
-           <MdHelpOutline size={"1.5em"}/> Help
-        </div> */}
-        
+        <hr className='Menu-Hr mx-4 my-8 border border-solid border-opacity-50 border-gray-700'/></>:null}        
 
       </div>
-      
+        
       
     
    </div>
-    
+   </>
   )
 }
 
