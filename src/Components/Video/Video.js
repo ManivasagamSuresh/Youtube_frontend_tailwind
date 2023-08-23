@@ -104,17 +104,17 @@ const handleSub = async()=>{
   return (
     <>
     
-    <div className="Video-Container flex flex-col gap-5 md:gap-6">
-      <div className="Video-Content w-full  text-gray-400 mx-1">
+    <div className="Video-Container flex flex-col gap-5 md:flex-row md:gap-6">
+      <div className="Video-Content w-full  text-gray-400 mx-1 md:w-8/12">
         <div className="Video-Wrapper w-full">
           <video className="Video-Vdo w-full "  src={currentVideo?.videoUrl} controls/>          
         </div>
-        <h1 className="Video-Title text-lg font-semibold mt-5 mb-2 text-gray-400">{currentVideo?.title}</h1>
-        <div className="Video-Details flex flex-col gap-3">
+        <h1 className="Video-Title text-lg md:text-2xl font-semibold mt-5 mb-2 text-gray-400">{currentVideo?.title}</h1>
+        <div className="Video-Details flex flex-col gap-3 md:gap-5">
           { <div className="Video-Info flex text-sm text-gray-400">{currentVideo?.views}  views · {format(currentVideo?.timestamps)}</div> }
           {/*  */}
-          <div className="Video-Buttons flex gap-5">
-            <div className="Video-Button flex items-center gap-1 cursor-pointer" >
+          <div className="Video-Buttons flex gap-5 md:gap-8">
+            <div className="Video-Button flex items-center gap-1 cursor-pointer " >
               {currentVideo?.likes?.includes(currentUser.others._id)?<AiFillLike size={"1.2em"} /> :<AiOutlineLike size={"1.2em"} onClick={{handlelike}}/>}
               {currentVideo?.likes?.length}
             </div>
@@ -146,7 +146,7 @@ const handleSub = async()=>{
           </div>
           <button className="Video-ChannelSubscribe text-sm px-2 py-0 h-8 rounded-2xl bg-gray-200 font-semibold text-black " onClick={handleSub}>{currentUser?.others.subscribedUsers?.includes(Channel._id) ? "Subscribed":  "Subscribe"}</button>
         </div>
-        <hr className="Video-Hr border border-gray-400 my-7" />
+        <hr className="Video-Hr border border-gray-400 my-5" />
         <Comments videoID={currentVideo?._id} socket={socket}/>
       </div>
       <Recommodation tags={currentVideo?.tags}/>     

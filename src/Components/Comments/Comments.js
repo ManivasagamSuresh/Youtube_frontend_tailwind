@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Comments.css";
+// import "./Comments.css";
 import Comment from "../CommentCard/Comment";
 import axios from "axios";
 import { Config } from "../../Config";
@@ -76,17 +76,17 @@ function Comments({ videoID, socket }) {
 
   return (
     <div className="Comments-Container">
-      <div className="Comments-New">
-        <img className="Comments-Avatar" src={currentUser.img} />
+      <div className="Comments-New flex items center gap-4">
+        <img className="Comments-Avatar w-10 h-10 rounded-full bg-slate-50" src={currentUser.img} />
         <form onSubmit={formik.handleSubmit}>
           <input
-            className="Comments-Input"
+            className="Comments-Input border-none border-b border-gray-400 bg-transparent outline-none p-1 w-full text-gray-400"
             name="comment"
             value={formik.values.comment}
             onChange={formik.handleChange}
             placeholder="Add Your Comment...."
           />
-          <button type="submit" className="Comments-Addbutton">
+          <button type="submit" className="Comments-Addbutton hidden">
             add
           </button>
         </form>

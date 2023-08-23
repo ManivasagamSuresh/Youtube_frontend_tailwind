@@ -1,33 +1,35 @@
-.CommentCard-Container{
+/* .CommentCard-Container{
 display: flex;
 gap: 10px;
 margin: 30px 0px ;
 color: #aaaaaa;
-}
-.CommentCard-Avatar{
+} */
+/* .CommentCard-Avatar{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-}
-.CommentCard-Details{
+} */
+/* .CommentCard-Details{
     display: flex;
     flex-direction: column;
     gap: 10px;
     color: #aaaaaa;
-}
+} */
 
-.CommentCard-Name{
+/* .CommentCard-Name{
 font-size: 13px;
 font-weight: 500;
 color: #aaaaaa;
-}
-.CommentCard-Date{
- font-size: 12px;
- font-weight: 400;
- color: #aaaaaa;
-    margin-left: 5px;
+} */
 
-}
-.CommentCard-text{
+
+    /* .CommentCard-Date{
+    font-size: 12px;
+    font-weight: 400;
+    color: #aaaaaa;
+        margin-left: 5px;
+
+    } */
+/* .CommentCard-text{
 font-size: 14px;
-}
+} */

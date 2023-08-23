@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import "./Recommodation.css"
+// import "./Recommodation.css"
 import { Config } from '../../Config';
 import VideoCard from '../VideoCard/Videocard';
 import { useSelector } from 'react-redux';
@@ -28,7 +28,7 @@ function Recommodation({tags}) {
   },[tags,currentVideo])
   
     return (
-    <div className='Recommodation-Container'>
+    <div className='Recommodation-Container w-full md:w-1/3 text-gray-400 items-center'>
           {
             Videos.map((vdo)=>{
                  return   <RecommendCard  key={vdo._id} vdo={vdo}/>
