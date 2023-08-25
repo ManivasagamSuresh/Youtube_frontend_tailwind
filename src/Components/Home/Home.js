@@ -21,7 +21,7 @@ const fetchdata = async()=>{
     const videodata = await axios.get(`${Config.api}/${type}`,{headers :{
         "authorization":localStorage.getItem("accessToken")
     }})  
-    // console.log(videodata.data) ;  
+    console.log(videodata.data) ;  
      setVideos(videodata.data);
   } catch (error) {
     console.log(error);

@@ -26,7 +26,7 @@ function Mobmenu() {
         <div className='flex items-center justify-around h-full'>
             <div className='text-center '>Sign In now to like, 
             <br/>comment and upload videos</div>
-            <button onClick={()=>{navigate('/')}} className='bg-red-600 p-2 rounded'> Sign In</button>
+            <button onClick={()=>{navigate('/login')}} className='bg-red-600 p-2 rounded'> Sign In</button>
         </div>
         :
         <>

@@ -1,12 +1,12 @@
-.Login-Container{
+/* .Login-Container{
     color: #aaaaaa;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 84vh;
-    /* width: 300px; */
-}
-.Login-Wrapper{
+    
+} */
+/* .Login-Wrapper{
     color: #aaaaaa;
     display: flex;
     align-items: center;
@@ -14,18 +14,18 @@
     background-color: #202020;
     padding: 20px 50px;
     gap: 10px;
-}
-.Login-Title{
+} */
+/* .Login-Title{
 font-size: 24px;
 margin-bottom: 0px;
 
-}
-.Login-SubTitle{
+} */
+/* .Login-SubTitle{
     font-size: 15px;
     font-weight: 300;
     margin-bottom: 30px;
-}
-.Login-Input{
+} */
+/* .Login-Input{
     border: 1px solid #373737;
     border-radius: 3px;
     background-color: transparent;
@@ -34,8 +34,8 @@ margin-bottom: 0px;
     outline: none;
     color: #aaaaaa;
 
-}
-.Login-Button{
+} */
+/* .Login-Button{
     background-color : red;
 font-weight: 500;
 color: white;
@@ -44,9 +44,9 @@ border-radius: 3px;
 height: max-content;
 padding: 10px 20px;
 cursor: pointer;
-}
+} */
 
-.Login-Signup{
+/* .Login-Signup{
     color:  red;
     cursor: pointer;
-}
+} */

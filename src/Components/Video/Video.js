@@ -77,7 +77,8 @@ const handledislike = async()=>{
     const dis = await axios.put(`${Config.api}/dislike/${currentVideo._id}`,{"headers" :{
       "authorization":localStorage.getItem("accessToken")
   }})
-  dispatch(dislike(currentUser.others._id))
+  dispatch(dislike(currentUser.others._id));
+  console.log("clicked")
   } catch (error) {
     console.log(error); 
   }}
@@ -107,7 +108,7 @@ const handleSub = async()=>{
     <div className="Video-Container flex flex-col gap-5 md:flex-row md:gap-6">
       <div className="Video-Content w-full  text-gray-400 mx-1 md:w-8/12">
         <div className="Video-Wrapper w-full">
-          <video className="Video-Vdo w-full "  src={currentVideo?.videoUrl} controls/>          
+          <video className="Video-Vdo w-full"  src={currentVideo?.videoUrl} controls/>          
         </div>
         <h1 className="Video-Title text-lg md:text-2xl font-semibold mt-5 mb-2 text-gray-400">{currentVideo?.title}</h1>
         <div className="Video-Details flex flex-col gap-3 md:gap-5">
@@ -115,7 +116,7 @@ const handleSub = async()=>{
           {/*  */}
           <div className="Video-Buttons flex gap-5 md:gap-8">
             <div className="Video-Button flex items-center gap-1 cursor-pointer " >
-              {currentVideo?.likes?.includes(currentUser.others._id)?<AiFillLike size={"1.2em"} /> :<AiOutlineLike size={"1.2em"} onClick={{handlelike}}/>}
+              {currentVideo?.likes?.includes(currentUser.others._id)?<AiFillLike size={"1.2em"} /> :<AiOutlineLike size={"1.2em"} onClick={handlelike}/>}
               {currentVideo?.likes?.length}
             </div>
             <div className="Video-Button flex items-center gap-1 cursor-pointer" >

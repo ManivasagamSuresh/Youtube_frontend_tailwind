@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Config } from '../../Config';
-import "./Signup.css"
+// import "./Signup.css"
 
 
 function Signup() {
@@ -37,7 +37,7 @@ function Signup() {
          
             let user = await axios.post(`${Config.api}/signup`,values)
           console.log("registered")
-          navigate('/')
+          navigate('/login')
         
           
           
@@ -52,12 +52,12 @@ function Signup() {
 
 
   return (
-    <div className='Signup-Container'>
+    <div className='Signup-Container h-screen bg-zinc-900 flex items-center justify-center'>
       <form onSubmit={formik.handleSubmit}>
-        <div className='Signup-Wrapper'>
-        <h1 className='Signup-Title'>Welcome..!</h1>
-        <div className='Signup-SubTitle'>Signup with Email</div>
-        <input className='Signup-Input' placeholder="User Name" name='name'  
+        <div className='Signup-Wrapper text-gray-400 flex items-center flex-col bg-zinc-800 px-14 py-5 gap-3'>
+        <h1 className='Signup-Title text-2xl'>Welcome..!</h1>
+        <div className='Signup-SubTitle text-sm font-light mb-8'>Signup with Email</div>
+        <input className='Signup-Input text-gray-400 rounded-sm bg-transparent h-8 outline-none border border-zinc-600 px-2' placeholder="User Name" name='name'  
                                                              onChange={formik.handleChange} 
                                                              onBlur={formik.handleBlur} 
                                                              value={formik.values.name}/>
@@ -65,7 +65,7 @@ function Signup() {
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.name}</span>
                : null
                }
-        <input className='Signup-Input' placeholder="E-mail"  name='email'  
+        <input className='Signup-Input text-gray-400 rounded-sm bg-transparent h-8 outline-none border border-zinc-600 px-2' placeholder="E-mail"  name='email'  
                                                             onChange={formik.handleChange} 
                                                             onBlur={formik.handleBlur} 
                                                             value={formik.values.email}/>
@@ -73,7 +73,7 @@ function Signup() {
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.email}</span>
                : null
                }                                               
-        <input className='Signup-Input' type={"password"} placeholder="Password"name='password'  
+        <input className='Signup-Input text-gray-400 rounded-sm bg-transparent h-8 outline-none border border-zinc-600 px-2' type={"password"} placeholder="Password"name='password'  
                                                              onChange={formik.handleChange} 
                                                              onBlur={formik.handleBlur} 
                                                              value={formik.values.password}/>
@@ -81,8 +81,8 @@ function Signup() {
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.password}</span>
                : null
                }
-        <button type='submit' className='Signup-Button'>Register</button>
-        <div>Already have an account ?</div><span className='Signup-Login' onClick={()=>{navigate('/')}}>Login..</span>
+        <button type='submit' className='Signup-Button bg-red-600 font-medium text-white border-none rounded-sm px-5 py-1  cursor-pointer'>Register</button>
+        <div>Already have an account ?</div><span className='Signup-Login text-red-600 cursor-pointer' onClick={()=>{navigate('/login')}}>Login..</span>
         </div>
         </form>
         </div>

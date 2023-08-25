@@ -34,21 +34,21 @@ function RecommendCard({vdo, test }) {
       >
         <img
           src={vdo.imgUrl}
-          className={`Card-Img  bg-gray-400 rounded-md w-full h-40 md:w-44 md:h-28 object-fit }`}
+          className={`Card-Img  bg-gray-400 rounded-md w-full h-36 md:w-40 md:h-24 object-fit }`}
         />
         <div
-          className={`Card-Details flex items-center justify-start  gap-3 mt-0  `}
+          className={`Card-Details flex items-center   gap-3 mt-0  `}
         >
           <img
             src={Channel.img}
             className={`Channel-Img w-8 h-8 rounded-full bg-white md:hidden`}
           />
           <div
-            className={`Card-Texts w-full font-sans text-xs flex flex-col gap-2 `}
+            className={`Card-Texts w-full font-sans text-xs flex flex-col gap-2`}
           >
-            <h1 className="Card-Title text-lg font-semibold text-gray-400 ">{vdo.title}</h1>
-            <h2 className="Card-ChannelName text-sm text-gray-400  mx-2 hidden md:block">{Channel.name}</h2>
-            <div className="Card-Info text-sm text-gray-400 ">
+            <h1 className="Card-Title text-base font-semibold text-gray-400 ">{vdo.title}</h1>
+            <h2 className="Card-ChannelName text-xs text-gray-400  mx-2 hidden md:block">{Channel.name}</h2>
+            <div className="Card-Info text-xs text-gray-400 ">
             <span className="md:hidden"> {Channel.name}  · </span> {vdo.views} Views · {format(vdo.timestamps)}
             </div>
           </div>

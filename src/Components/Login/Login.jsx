@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import "./Login.css"
+// import "./Login.css"
 import { Config } from '../../Config'
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginStart, loginSuccess } from '../Redux/userSlice';
@@ -38,7 +38,7 @@ const formik = useFormik({
       localStorage.setItem("accessToken",user.data.token)
       dispatch(loginSuccess(user.data));
       
-      navigate('/random')
+      navigate('/')
       console.log("signed in");      
     } catch (error) {
       console.log(error)
@@ -51,12 +51,12 @@ const formik = useFormik({
 
 
   return (
-    <div className='Login-Container'>
+    <div className='Login-Container h-screen bg-zinc-900 flex items-center justify-center '>
       <form onSubmit={formik.handleSubmit}>
-        <div className='Login-Wrapper'>
-        <h1 className='Login-Title'>Login with Email</h1>
-        <div className='Login-SubTitle'>to continue to MBTube</div>
-        <input className='Login-Input' placeholder="E-mail" name='email'  
+        <div className='Login-Wrapper text-gray-400 flex items-center flex-col bg-zinc-800 px-14 py-5 gap-3'>
+        <h1 className='Login-Title text-2xl'>Login with Email</h1>
+        <div className='Login-SubTitle text-sm font-light mb-8'>to continue to MBTube</div>
+        <input className='Login-Input text-gray-400 rounded-sm bg-transparent h-8 outline-none border border-zinc-600 px-2' placeholder="E-mail" name='email'  
                                                             onChange={formik.handleChange} 
                                                             onBlur={formik.handleBlur} 
                                                             value={formik.values.email} />
@@ -64,7 +64,7 @@ const formik = useFormik({
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.email}</span>
                : null
                }                                             
-        <input className='Login-Input' type={"password"} placeholder="Password"
+        <input className='Login-Input text-gray-400 rounded-sm bg-transparent h-8 outline-none border border-zinc-600 px-2' type={"password"} placeholder="Password"
                                                              name='password'  
                                                              onChange={formik.handleChange} 
                                                              onBlur={formik.handleBlur} 
@@ -73,8 +73,8 @@ const formik = useFormik({
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.password}</span>
                : null
                }
-        <button type={"submit"} className='Login-Button'>Login</button>
-        <div>Don't have an account ?</div><span className='Login-Signup' onClick={()=>{navigate('/Signup')}}>Sign up..</span>
+        <button type={"submit"} className='Login-Button bg-red-600 font-medium text-white border-none rounded-sm px-5 py-1  cursor-pointer'>Login</button>
+        <div>Don't have an account ?</div><span className='Login-Signup text-red-600 cursor-pointer' onClick={()=>{navigate('/Signup')}}>Sign up..</span>
         </div>
         </form>
         </div>

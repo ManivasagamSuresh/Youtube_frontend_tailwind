@@ -27,7 +27,7 @@ function Navbar() {
   const signout = () => {
     dispatch(logout());
     localStorage.clear("accessToken");
-    navigate("/");
+    navigate("/login");
   };
   const handleSearch = (searchQuery) => {
     setQ(searchQuery);
@@ -38,9 +38,8 @@ useEffect(()=>{
 },[searchOpen]);
   return (
     <>
-      {currentUser ? 
-        <>
-          <div className="fixed bg-custom w-screen h-14 text-white z-50">
+      
+          <div className="fixed bg-custom w-screen h-14 text-white ">
           
 
           <div className="mob-view flex items-center justify-between mx-3  h-full md:hidden">
@@ -87,12 +86,12 @@ useEffect(()=>{
           </div>
             
              {/* --------------------- normal view ------------------- */}
-        <div className=" hidden md:flex sticky top-0 items-center justify-between w-full px-5 text-white z-10">
-            <div className="logo flex items-center justify-center gap-2 " >
+        <div className=" hidden md:flex sticky top-0 items-center justify-between  px-4 w-full pt-3 text-white z-10">
+            <div className="logo flex items-center justify-center gap-2" >
                <img className='Menu-Img h-6' src={logo}/>
                MBTube            
             </div>
-            <div className="Navbar-Search w-5/12 flex items-center justify-between p-1.4 border border-gray-300 rounded-md">
+            <div className="Navbar-Search w-5/12 flex items-center justify-between p-1.4 border border-gray-300 rounded-md flex-0.6">
                 <input
                   className="border-none bg-transparent  outline-none text-gray-400 px-3"
                   placeholder="Search"
@@ -106,7 +105,7 @@ useEffect(()=>{
             </div>
 
                 {currentUser ? (
-                <div className="Navbar-User  flex items-center gap-7 " >
+                <div className="Navbar-User  flex items-center gap-5 w-fit flex-0.3" >
                   <BiVideoPlus size={"1.5em"} onClick={() => navigate("/vdoupload")}  className="cursor-pointer"/>
                   <div className="flex items-center gap-2">  
                   {/* <img className="Navbar-Avatar block w-7 h-7 bg-slate-300 rounded-3xl" src="" /> */}
@@ -127,11 +126,11 @@ useEffect(()=>{
               ) : (
                 <button
                   onClick={() => {
-                    navigate("/");
+                    navigate("/login");
                   }}
-                  className="Navbar-Button cursor-pointer"
+                  className="Navbar-Button cursor-pointer flex items-center gap-2 w-32"
                 >
-                  <RiAccountCircleLine /> Sign In
+                  <RiAccountCircleLine size={'22px'}/> Sign In
                 </button>
               )}    
 
@@ -145,8 +144,8 @@ useEffect(()=>{
             </div>
           
           {/* {Open && <Uploadvdo setOpen={setOpen} />} */}
-        </>
-       : null}
+       
+       
     </>
   );
 }
