@@ -14,7 +14,7 @@ function Menu() {
    console.log(currentUser)
   return (
    <>
-   <div className='Menu-Container hidden  bg-red-600 text-black md:flex flex-col h-calc56vh sticky top-14 ' >
+   <div className='Menu-Container hidden  bg-zinc-800 text-gray-400 md:flex flex-col h-calc56vh sticky top-14 ' >
      
       <div className='Menu-Wrapper py-5 px-8'>
       

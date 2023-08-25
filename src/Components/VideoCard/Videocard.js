@@ -7,7 +7,7 @@ import { format } from "timeago.js";
 import axios from "axios";
 import { Config } from "../../Config";
 
-function VideoCard({ type, vdo, test }) {
+function VideoCard({ type, vdo}) {
   const [Channel, setChannel] = useState({});
 
   useEffect(() => {

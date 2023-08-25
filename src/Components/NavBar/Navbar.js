@@ -23,7 +23,7 @@ function Navbar() {
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+console.log(Open)
   const signout = () => {
     dispatch(logout());
     localStorage.clear("accessToken");
@@ -36,10 +36,14 @@ function Navbar() {
 useEffect(()=>{
   console.log(searchOpen)
 },[searchOpen]);
+
+
+
+
   return (
     <>
       
-          <div className="fixed bg-custom w-screen h-14 text-white ">
+          <div className="fixed bg-custom w-screen h-14 text-white z-50">
           
 
           <div className="mob-view flex items-center justify-between mx-3  h-full md:hidden">
@@ -50,16 +54,20 @@ useEffect(()=>{
                <span> MBTube</span>            
             </div>
            
-              <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center gap-4 ">
                 <MdOutlineSearch onClick={()=>{setSearchOpen(true)}} size={"25px"} className=""/>
                 {/* <img className="w-7 h-7 bg-gray-300 rounded-3xl" src="" alt=""/> */}
-                <BsPersonCircle size={"25px"}/>
+                <BsPersonCircle size={"25px"} onClick={()=>{setOpen(!Open)}} className="navbar-PersonIcon"/>
+                {Open?<div className="navbar-Logout" onClick={() => {signout();}}>
+                Logout
+                </div>:null}
               </div>
+             
               </>
               :
               <div className="flex items-center justify-between flex-1 w-full">
               <div className="flex-0.3" onClick={()=>{
-                navigate("/random");
+                navigate("/");
                 setSearchOpen(false);
               }}>
               

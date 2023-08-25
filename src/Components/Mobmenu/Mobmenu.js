@@ -31,7 +31,7 @@ function Mobmenu() {
         :
         <>
         <div className='flex items-center justify-around h-full'>
-        <div onClick={()=>{navigate("/random")}}>
+        <div onClick={()=>{navigate("/")}}>
             <AiOutlineHome size={"25px"}/>
         </div>
         <div onClick={()=>{navigate("/trendvideo")}}>

@@ -19,7 +19,6 @@ function Uploadvdo({ setOpen,mob }) {
   const [vdoPerc, setvdoPerc] = useState(0);
   const [Vdo, setVdo] = useState(undefined);
   const [inputs, setInputs] = useState({});
-
   const [tags, setTags] = useState([]);
 
   let t = [];
@@ -69,6 +68,7 @@ function Uploadvdo({ setOpen,mob }) {
         // Upload completed successfully, now we can get the download URL
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setInputs((prev) => {
+
             return { ...prev, [urltype]: downloadURL };
           });
         });
@@ -97,19 +97,22 @@ function Uploadvdo({ setOpen,mob }) {
           },
         }
       );
-      setOpen(false);
-      console.log(res.data);
+      
+      
       alert("Your Video has been Uploaded");
-      // window.location.reload();
+      console.log(res.data.insertedId)
       navigate(`/video/${res.data.insertedId}`);
     } catch (error) {}
   };
 
+
+
+
   return (
-    <div className={`Upload-Container  w-full  h-fit  px-1  bg-gray-600 bg-opacity-50 md:flex md:flex-col items-center justify-center`}>
+    <div className={`Upload-Container  w-full  h-fit  px-1  bg-gray-600 bg-opacity-50 flex flex-col items-center justify-center`}>
       <form className="w-full  flex flex-col items-center justify-center">
         <div className="Upload-Wrapper  w-full md:w-9/12 h-fit bg-gray-800 text-gray-400 p-3 flex flex-col gap-20 relative">
-          <h2 className="Upload-Close absolute top-2 right-3 cursor-pointer text-2xl " onClick={() => navigate("/random")} >
+          <h2 className="Upload-Close absolute top-2 right-3 cursor-pointer text-2xl " onClick={() => navigate("/")} >
             X
           </h2>
           <h1 className="text-center text-2xl md:text-4xl mx-6">Upload a new Video</h1>
@@ -150,7 +153,7 @@ function Uploadvdo({ setOpen,mob }) {
             name="tags"
           />
 
-          <label className="Upload-Lable border border-gray-700 rounded-md p-2 text-gray-400 bg-transparent">Image :</label>
+          <label className="Upload-Lable ">Image :</label>
           {imgPerc ? (
             "Uploading :" + imgPerc + "%"
           ) : (
@@ -161,11 +164,11 @@ function Uploadvdo({ setOpen,mob }) {
               onChange={(e) => setImg(e.target.files[0])}
             />
           )}
-
           <button
             type="submit"
             className="Upload-Button bg-red-500 font-medium text-white border-none rounded-md py-2 px-3 mb-2 cursor-pointer"
             onClick={handleUploadDb}
+            
           >
             Add Video
           </button>
