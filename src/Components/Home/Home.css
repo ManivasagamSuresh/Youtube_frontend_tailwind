@@ -1,7 +1,0 @@
-.Home-Container{
-    display: flex;
-    /* flex:7; */
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-}

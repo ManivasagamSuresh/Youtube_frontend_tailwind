@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Video.css";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import { RiShareForwardLine } from "react-icons/ri";

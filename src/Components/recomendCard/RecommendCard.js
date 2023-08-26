@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import "./Videocard.css";
-import mb from "../../img/mb.jpg";
-import logo from "../../img/channelLogo.jpg";
 import { Link } from "react-router-dom";
 import { format } from "timeago.js";
 import axios from "axios";

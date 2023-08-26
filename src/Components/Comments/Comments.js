@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import "./Comments.css";
 import Comment from "../CommentCard/Comment";
 import axios from "axios";
 import { Config } from "../../Config";

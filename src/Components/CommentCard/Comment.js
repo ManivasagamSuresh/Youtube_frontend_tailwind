@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import "./Comment.css";
 import logo from "../../img/channelLogo.jpg";
 import { useSelector } from "react-redux";
 import { format } from "timeago.js";

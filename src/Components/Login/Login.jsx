@@ -2,15 +2,16 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import "./Login.css"
 import { Config } from '../../Config'
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginStart, loginSuccess } from '../Redux/userSlice';
 import { UserContext } from '../Context/userContext';
+import load from "../../loading.gif"
 
 function Login() {
     const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loading , setLoading] = useState(false)
 
 const formik = useFormik({
   initialValues :{
@@ -32,12 +33,12 @@ const formik = useFormik({
   },
   onSubmit : async(values)=>{
     try {
-      
+      setLoading(true);
       dispatch(loginStart());
       let user = await axios.post(`${Config.api}/signin`,values)
       localStorage.setItem("accessToken",user.data.token)
       dispatch(loginSuccess(user.data));
-      
+      setLoading(false);
       navigate('/')
       console.log("signed in");      
     } catch (error) {
@@ -73,7 +74,10 @@ const formik = useFormik({
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.password}</span>
                : null
                }
-        <button type={"submit"} className='Login-Button bg-red-600 font-medium text-white border-none rounded-sm px-5 py-1  cursor-pointer'>Login</button>
+       {
+         !loading ?<button type={"submit"} className='Login-Button bg-red-600 font-medium text-white border-none rounded-md px-5 py-1  cursor-pointer'>Login</button>
+        :<button type={"submit"} className='Login-Button bg-red-600 font-medium text-white border-none rounded-md px-5 py-1  cursor-pointer flex gap-2 items-center'><span>Signin In</span> <img src={load} alt="" className={`h-4 w-4`}/></button>
+       }
         <div>Don't have an account ?</div><span className='Login-Signup text-red-600 cursor-pointer' onClick={()=>{navigate('/Signup')}}>Sign up..</span>
         </div>
         </form>

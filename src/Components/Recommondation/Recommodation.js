@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-// import "./Recommodation.css"
 import { Config } from '../../Config';
 import VideoCard from '../VideoCard/Videocard';
 import { useSelector } from 'react-redux';

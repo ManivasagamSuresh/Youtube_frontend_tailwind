@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-// import "./Navbar.css";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { MdOutlineSearch } from "react-icons/md";
 import { BiVideoPlus } from "react-icons/bi";

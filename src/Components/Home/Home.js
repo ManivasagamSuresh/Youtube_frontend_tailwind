@@ -1,11 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Config } from '../../Config'
-import Menu from '../Menu/Menu'
-import Navbar from '../NavBar/Navbar'
-import Video from '../Video/Video'
 import VideoCard from '../VideoCard/Videocard'
-// import "./Home.css"
 
 function Home({type}) {
 const[Videos , setVideos] = useState([])

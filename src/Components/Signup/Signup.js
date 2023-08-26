@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Config } from '../../Config';
-// import "./Signup.css"
-
+import load from "../../loading.gif"
 
 function Signup() {
     const navigate = useNavigate();
+    const [loading , setLoading] = useState(false)
 
     const formik = useFormik({
       initialValues :{
@@ -34,9 +34,10 @@ function Signup() {
       onSubmit : async(values)=>{
         
         try {
-         
+          setLoading(true);
             let user = await axios.post(`${Config.api}/signup`,values)
           console.log("registered")
+          setLoading(false);
           navigate('/login')
         
           
@@ -81,7 +82,11 @@ function Signup() {
                ? <span style={{color:"#aaaaaa",fontSize:"12px",marginBottom:"15px"}}>{formik.errors.password}</span>
                : null
                }
-        <button type='submit' className='Signup-Button bg-red-600 font-medium text-white border-none rounded-sm px-5 py-1  cursor-pointer'>Register</button>
+        {
+          !loading ?<button type='submit' className='Signup-Button bg-red-600 font-medium text-white border-none rounded-md px-5 py-1  cursor-pointer'>Register</button>
+          :<button type={"submit"} className='Login-Button bg-red-600 font-medium text-white border-none rounded-md px-5 py-1  cursor-pointer flex gap-2 items-center'><span>Signing up</span> <img src={load} alt="" className={`h-4 w-4`}/></button>
+        }
+        
         <div>Already have an account ?</div><span className='Signup-Login text-red-600 cursor-pointer' onClick={()=>{navigate('/login')}}>Login..</span>
         </div>
         </form>
