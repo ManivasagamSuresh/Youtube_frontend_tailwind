@@ -16,8 +16,8 @@ import PortalOutlet from "./Outlet.js";
 import RedirectIfNoUserData from "./RedirectNoUser.js";
 
 
-const socket = io.connect("http://localhost:5000");
-// const socket = io.connect('https://you-tube-clone.onrender.com')
+// const socket = io.connect("http://localhost:5000");
+const socket = io.connect('https://you-tube-clone.onrender.com')
 
 function App() {
   return (
