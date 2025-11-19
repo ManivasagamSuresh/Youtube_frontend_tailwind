@@ -80,7 +80,12 @@ const formik = useFormik({
        }
         <div>Don't have an account ?</div><span className='Login-Signup text-red-600 cursor-pointer' onClick={()=>{navigate('/Signup')}}>Sign up..</span>
         </div>
+        <div className='cred-container bg-zinc-600 mt-4 flex justify-center align-middle flex-col w-full text-center'>
+          <div>Email: test@gmail.com</div>
+          <div>Pass: test</div>
+        </div>
         </form>
+        
         </div>
   )
 }
