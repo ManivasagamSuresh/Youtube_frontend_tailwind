@@ -20,8 +20,8 @@ const RedirectIfNoUserData = ({ children }) => {
                 "authorization":localStorage.getItem("accessToken")
             }})
             console.log(verifyUser)
-            if(verifyUser.data = "Verified"){
-                console.log("redirecting")
+            if(verifyUser.data === "Verified"){
+                console.log("not redirecting")
             }else{
                 navigate('/login');
             }
